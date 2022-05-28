@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -18,4 +19,13 @@ public class PlayerController : MonoBehaviour
         float moveDirection = Input.GetAxisRaw("Vertical");
         rb.velocity = new Vector2(0, moveDirection * moveSpeed);
     }
-}
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Obstacle"))
+        {
+            Destroy(gameObject);
+        }
+    }
+}   
+    
