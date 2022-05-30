@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour
 
     private float speed;
     private float boostTimer;
-    private bool boosting;
+    private bool  boosting;
     
     void Start()
     {
@@ -50,15 +50,12 @@ public class PlayerController : MonoBehaviour
             speed = 10;
             Destroy(other.gameObject);
         }
-    }
-
-
-    private void OnTriggerEnter2D(Collider2D other)
-    {
+        
         if (other.gameObject.CompareTag("Obstacle"))
         {
             Destroy(gameObject);
         }
     }
+    
 }   
     
